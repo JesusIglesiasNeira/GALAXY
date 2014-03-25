@@ -37,10 +37,6 @@ App.ajax = (function(){
     };
 
 
-
-
-
-
     return{
         obtenerOrdenes : obtOrdenes,
         enviarDatos : envDatos
