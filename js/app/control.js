@@ -3,17 +3,26 @@ App.control = (function(){
     var codUsu;
     var liTareas;
 ///////////Func a realizar cuando se genere el evento////////////
+    //al pulsar el boton actualizar
     var actualizar = function(){
         ajax.obtenerOrdenes(codUsu);
         inicial();
     };
 
+    //al pulsar el boton enviar datos
     var enviarDatos = function(tareasRealizadas){
         ajax.enviarDatos(tareasRealizadas);
     };
 
+    // al pulsar el boton guardar o al volver a visualizar la lista
+    //tras haber añadido datos de una tarea
     var guardar = function(datos){
         data.guardarCambios(datos);
+    };
+
+    //al haber seleccionado una de las 3 pestañas visualizables
+    var mostrarPestañaTarea = function(){
+         vistas.mostrarPestaña(/**/);
     };
 
 
