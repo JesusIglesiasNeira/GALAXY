@@ -1,7 +1,7 @@
 ﻿var App = App||{};
 App.control = (function(){
     'use strict';
-    var data = new App.data();
+    var data = new App.datos();
     var ajax = new App.ajax();
     var vistas = new App.Vistas();
     var eventos = new App.eventos();

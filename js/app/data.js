@@ -1,5 +1,5 @@
 var App = App||{};
-App.data = (function(){
+App.datos = (function(){
 
     var guardarCodUsu = function(codigo){
         if (window.localStorage) {
@@ -14,7 +14,7 @@ App.data = (function(){
     };
 
     var obtListaTareas = function(){
-        var listaTareas = JSON.parse(localStorage.getItem('listaOrdenes');
+        var listaTareas = JSON.parse(localStorage.getItem('listaOrdenes'));
     };
 
     var guardarLista = function(lista){
@@ -30,6 +30,7 @@ App.data = (function(){
     var guardarCambios = function(datos){
         if (window.localStorage) {
           localStorage.setItem('listaOrdenes', datos);
+        }
 
     };
 
