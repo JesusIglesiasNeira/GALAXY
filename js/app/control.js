@@ -3,6 +3,9 @@ App.control = (function(){
     'use strict';
     var codUsu;
     var liTareas;
+
+
+
 ///////////Func a realizar cuando se genere el evento////////////
     //al pulsar el boton actualizar
     var actualizar = function(){
@@ -50,14 +53,15 @@ App.control = (function(){
 /////////////////////////////Vistas/////////////////////////////
 
     var mostrarConfig = function(){
-        vistas.mostarConfiguracion();
+        vistas.pintaPantallaConfiguracion();
     };
 
     var mostrarListaTareas = function(){
-         vistas.crearPantallaLista(liTareas);
+         vistas.pintarLista(liTareas);
     };
 
     var mostrarTarea = function(){
+        //////////////
          vistas.crearPantallaOrden(/**/);
     };
 
@@ -72,25 +76,29 @@ App.control = (function(){
 
 
 
-    ////Función inicial que se ejecuta al cargar control.js//////
+    ////Función inicial que se ejecuta//////
 
-    function inicial(){
+    var inicial = function (){
         codUsu = data.obtenerCodUsu();
         if (codUsu && codUsu.length > 0){
             liTareas = data.obtenerListaTareas();    //locales
             if (liTareas && liTareas.length > 0 ){
-                vistas.mostrarPantallaListaTareas(liTareas);
+                vistas.crearPantallaLista(liTareas);
             }
         }
         else {alert('Codigo de usuario incorrecto');}
-    }
+    };
 
 
 
 
 
         return{
-        crearLista : crearLista
+        crearLista : crearLista,
+        actualizaLista : actualizar,
+        enviarCompletadas : enviarDatos,
+        guardarCambios : guardar,
+        iniciar : inicial
     };
 
 
