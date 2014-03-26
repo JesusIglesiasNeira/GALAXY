@@ -4,7 +4,7 @@ App.control = (function(){
 
 
     var codUsu;
-    var liTareas;
+
 
 
 
