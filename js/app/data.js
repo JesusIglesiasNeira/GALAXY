@@ -1,5 +1,6 @@
 var App = App||{};
 App.datos = (function(){
+    'use strict';
 
     var guardarCodUsu = function(codigo){
         if (window.localStorage) {
@@ -16,6 +17,17 @@ App.datos = (function(){
         return JSON.parse(localStorage.getItem('listaOrdenes'));
     };
 
+
+    var obtOrden = function(codOrden){
+        var listaOrdenes = JSON.parse(localStorage.getItem('listaOrdenes'));
+
+        for(var i in listaOrdenes) {
+            if(listaOrdenes[i].codigoOrden === codOrden) {
+                return listaOrdenes[i];
+            }
+        }
+    };
+
     var guardarLista = function(lista){
         if (window.localStorage) {
             //eliminamos el objeto que esta guardado en BD
@@ -26,20 +38,47 @@ App.datos = (function(){
 
     };
 
-    var guardar = function(datos){
-        if (window.localStorage) {
-          localStorage.setItem('listaOrdenes', datos);
+    var guardarEstado = function(codOrden, estado){
+        var listaOrdenes = JSON.parse(localStorage.getItem('listaOrdenes'));
+
+        for(var i in listaOrdenes) {
+            if(listaOrdenes[i].codigoOrden === codOrden) {
+
+                //modificar el estado de la orden
+                listaOrdenes[i].estado = estado;
+
+            }
         }
+        //volver a guardar la lista con los cambios
+        localStorage.setItem('listaOrdenes', JSON.stringify(listaOrdenes));
+
     };
 
+    var guardarOrden = function(orden){
+        var listaOrdenes = JSON.parse(localStorage.getItem('listaOrdenes'));
 
+        for(var i in listaOrdenes) {
+            if(listaOrdenes[i].codigoOrden === orden.codigoOrden) {
+
+                //modificar la orden
+                listaOrdenes[i]  = orden;
+                break;
+            }
+        }
+        //volver a guardar la lista con los cambios
+        localStorage.setItem('listaOrdenes', JSON.stringify(listaOrdenes));
+
+    };
 
 return{
         guardarCodUsu : guardarCodUsu,
         obtenerCodUsu : obtCodUsu,
         obtenerListaTareas : obtListaTareas,
         guardarLista : guardarLista,
-        guardarCambios : guardar
+        obtenerOrden : obtOrden,
+        guardarCambios : guardar,
+        guardarEstado : guardarEstado,
+        guardarOrden : guardarOrden
     };
 
-});
+})();

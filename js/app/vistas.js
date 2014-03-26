@@ -40,7 +40,13 @@ App.Vistas= (function(){
 
 
     //Pantalla Configuración
-    var mostrarConfiguracion = function(){};
+    var mostrarConfiguracion = function(){
+        var $contenedor = $('#contenedor');
+        //vaciar el contenido del contenedor
+        $contenedor.empty();
+        $contenedor.load('views/vistaConfiguracion.html');
+
+    };
 
     //Pantalla de la lista
     var crearPantallaLista = function(lista){
@@ -55,12 +61,14 @@ App.Vistas= (function(){
 
         //crear listado
         var tablaOrdenes = crearHTMLTabla(listaEjemplo);
+        //console.log(tablaOrdenes);
         $listaOrdenes.append(tablaOrdenes);
 
         //cargar botones
         $botones.load('views/vistaBotones.html');
 
         //mostrarlo en la pantalla
+        $contenedor.append($listaOrdenes);
         $contenedor.append($botones);
     };
 
@@ -85,23 +93,22 @@ App.Vistas= (function(){
             var elementosFila =[];
             elementosFila.push('<tr>');
             $fecha = $('<td/>',{'text' : lista[i].fInicio});
-            elementosFila.push($fecha[0]);
+            elementosFila.push($fecha.get(0).outerHTML);
             $codigo = $('<td/>',{'text' : lista[i].codigoOrden});
-            elementosFila.push($codigo[0]);
+            elementosFila.push($codigo.get(0).outerHTML);
             $denominacion = $('<td/>',{'text' : lista[i].nomServicio});
-            elementosFila.push($denominacion[0]);
+            elementosFila.push($denominacion.get(0).outerHTML);
             $estado = $('<td/>',{'text' : lista[i].estado});
-            elementosFila.push($estado[0]);
+            elementosFila.push($estado.get(0).outerHTML);
             $observaciones = $('<td/>',{'text' : lista[i].observaciones});
-            elementosFila.push($observaciones[0]);
+            elementosFila.push($observaciones.get(0).outerHTML);
             elementosFila.push('</tr>');
 
             arrayFilas.push(elementosFila.join(''));
-            //console.log(arrayFilas);
-
         }
 
         $tabla.append($cabeceras);
+        $tabla.append($(arrayFilas.join('')));
         return $tabla;
     };
 
