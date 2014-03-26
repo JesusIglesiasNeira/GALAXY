@@ -1,4 +1,3 @@
 ﻿$(function(){
-    var controller = new App.control();
-    controller.iniciar();
+    App.control.iniciar();
 });

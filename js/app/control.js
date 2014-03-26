@@ -1,10 +1,6 @@
 ﻿var App = App||{};
 App.control = (function(){
     'use strict';
-    var data = new App.datos();
-    var ajax = new App.ajax();
-    var vistas = new App.Vistas();
-    var eventos = new App.eventos();
 
 
     var codUsu;
@@ -15,19 +11,19 @@ App.control = (function(){
 ///////////Func a realizar cuando se genere el evento////////////
     //al pulsar el boton actualizar
     var actualizar = function(){
-        ajax.obtenerOrdenes(codUsu);
+        App.ajax.obtenerOrdenes(codUsu);
         inicial();
     };
 
     //al pulsar el boton enviar datos
     var enviarDatos = function(tareasRealizadas){
-        ajax.enviarDatos(tareasRealizadas);
+        App.ajax.enviarDatos(tareasRealizadas);
     };
 
     // al pulsar el boton guardar o al volver a visualizar la lista
     //tras haber añadido datos de una tarea
     var guardar = function(datos){
-        data.guardarCambios(datos);
+         App.datos.guardarCambios(datos);
     };
 
     //al haber seleccionado una de las 3 pestañas visualizables
@@ -36,8 +32,8 @@ App.control = (function(){
     };
 
     //Guardar código de usuario
-    var guardaUsuario = function(){
-         data.guardarCodUsu('pepito');
+    var guardaUsuario = function(val){
+          App.datos.guardarCodUsu(val);
     };
 
 
@@ -48,7 +44,7 @@ App.control = (function(){
 
 //////////////////////////////AJAX//////////////////////////////
     var crearLista = function(datos){
-        data.guardarCambios(datos);
+         App.datos.guardarCambios(datos);
     };
 
     var ordenesEnviadas = function(){
@@ -64,16 +60,16 @@ App.control = (function(){
 /////////////////////////////Vistas/////////////////////////////
 
     var mostrarConfig = function(){
-        vistas.pintaPantallaConfiguracion();
+        App.Vistas.pintaPantallaConfiguracion();
     };
 
     var mostrarListaTareas = function(){
-         vistas.pintarLista(liTareas);
+         App.Vistas.pintarLista(liTareas);
     };
 
     var mostrarTarea = function(){
         //////////////
-         vistas.crearPantallaOrden(/**/);
+         App.Vistas.crearPantallaOrden(/**/);
     };
 
 
@@ -90,17 +86,17 @@ App.control = (function(){
     ////Función inicial que se ejecuta//////
 
     var inicial = function (){
-        codUsu = data.obtenerCodUsu();
+        codUsu =  App.datos.obtenerCodUsu();
         if (codUsu && codUsu.length > 0){
-            liTareas = data.obtenerListaTareas();    //locales
+            liTareas =  App.datos.obtenerListaTareas();    //locales
             if (liTareas && liTareas.length > 0 ){
                 vistas.crearPantallaLista(liTareas);
             }
         }
         else {
-            alert('Codigo de usuario incorrecto');
+            //alert('Codigo de usuario incorrecto');
             mostrarConfig();
-            guardaUsuario();
+            //eventos.generaConfig();
         }
     };
 
@@ -121,4 +117,4 @@ App.control = (function(){
 
 
 
-});
+})();
