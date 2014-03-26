@@ -1,7 +1,7 @@
 ﻿var App = App||{};
 App.control = (function(){
     'use strict';
-    var data = new App.data();
+    var data = new App.datos();
     var ajax = new App.ajax();
     var vistas = new App.Vistas();
     var eventos = new App.eventos();
@@ -33,6 +33,11 @@ App.control = (function(){
     //al haber seleccionado una de las 3 pestañas visualizables
     var mostrarPestañaTarea = function(){
          vistas.mostrarPestaña(/**/);
+    };
+
+    //Guardar código de usuario
+    var guardaUsuario = function(){
+         data.guardarCodUsu('pepito');
     };
 
 
@@ -92,7 +97,11 @@ App.control = (function(){
                 vistas.crearPantallaLista(liTareas);
             }
         }
-        else {alert('Codigo de usuario incorrecto');}
+        else {
+            alert('Codigo de usuario incorrecto');
+            mostrarConfig();
+            guardaUsuario();
+        }
     };
 
 
@@ -100,13 +109,15 @@ App.control = (function(){
 
 
         return{
-        crearLista : crearLista,
-        actualizaLista : actualizar,
-        enviarCompletadas : enviarDatos,
-        guardarCambios : guardar,
-        mostrarPestaña : mostrarPestañaTarea,
-        iniciar : inicial
-    };
+            crearLista : crearLista,
+            actualizaLista : actualizar,
+            enviarCompletadas : enviarDatos,
+            guardarCambios : guardar,
+            mostrarPestaña : mostrarPestañaTarea,
+
+            guardarCodigoUsuario : guardaUsuario,
+            iniciar : inicial
+        };
 
 
 
