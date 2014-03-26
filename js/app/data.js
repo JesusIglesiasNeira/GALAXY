@@ -6,15 +6,14 @@ App.data = (function(){
             //almacenamos en BD el codigo de usuario
             localStorage.setItem('codUsuario', codigo);
         }
-
     };
 
     var obtCodUsu = function(){
-        localStorage.getItem('codUsuario');
+        return localStorage.getItem('codUsuario');
     };
 
     var obtListaTareas = function(){
-        var listaTareas = JSON.parse(localStorage.getItem('listaOrdenes');
+        var listaTareas = JSON.parse(localStorage.getItem('listaOrdenes'));
     };
 
     var guardarLista = function(lista){
@@ -27,10 +26,10 @@ App.data = (function(){
 
     };
 
-    var guardarCambios = function(datos){
+    var guardar = function(datos){
         if (window.localStorage) {
           localStorage.setItem('listaOrdenes', datos);
-
+        }
     };
 
 
