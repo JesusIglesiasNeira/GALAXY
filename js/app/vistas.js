@@ -1,22 +1,108 @@
 ﻿var App = App||{};
 App.Vistas= (function(){
 
-    "use strict"
+    "use strict";
+
+    var listaEjemplo = [//{}
+        //"listaOrdenes": [
+            {"codigoOrden":"o1111","codigoCliente":"c1111","nomServicio":"s1111","estado":"t","direccion":"una calle cualquiera","provincia":"Gipuzkoa","cp":"11111","fInicio":"26-03-2014","fFin":"26-03-2014",
+            "empleados":[
+                    {'nombre':"Alfredo Castillo",'codEmpleado':"e1111",'fecha':"",'hInicio':"09:30",'hFin':"16:30",'desplazamiento':""},
+                    {'nombre':"Enrique Marín",'codEmpleado':"e2222",'fecha':"",'hInicio':"09:30",'hFin':"16:30",'desplazamiento':""},
+                    {'nombre':"José Pérez",'codEmpleado':"e3333",'fecha':"",'hInicio':"09:30",'hFin':"10:30",'desplazamiento':""}],
+            "ordenPlan":[
+                    {'local':"local 11",'area':"",'trabajo':"",'tiempo':""}
+                ],
+            "observaciones": "una observacion"
+            },
+            {"codigoOrden":"o2222","codigoCliente":"c2222","nomServicio":"s2222","estado":"p","direccion":"otra calle cualquiera","provincia":"Navarra","cp":"22222","fInicio":"26-03-2014","fFin":"",
+            "empleados":[
+                    {'nombre':"Anne Salona",'codEmpleado':"e4444",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""},
+                    {'nombre':"Angela Castro",'codEmpleado':"e5555",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""}],
+            "ordenPlan":[
+                    {'local':"local21",'area':"",'trabajo':"",'tiempo':""},
+                    {'local':"local22",'area':"",'trabajo':"",'tiempo':""}
+                ],
+            "observaciones": "una observacion"
+            },
+            {"codigoOrden":"o3333","codigoCliente":"c3333","nomServicio":"s3333","estado":"p","direccion":"alguna calle cualquiera","provincia":"Gipuzkoa","cp":"33333","fInicio":"26-03-2014","fFin":"",
+            "empleados":[
+                    {'nombre':"Fernando Villarejo",'codEmpleado':"e6666",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""},
+                    {'nombre':"Carmen Astorgano",'codEmpleado':"e7777",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""},
+                    {'nombre':"Elena Espilla",'codEmpleado':"e8888",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""}],
+            "ordenPlan":[
+                    {'local':"local33",'area':"",'trabajo':"",'tiempo':""}
+                ],
+            "observaciones": "una observacion"
+            }
+        //]
+    ];//};
+
 
     //Pantalla Configuración
-    var mostarConfiguracion = function(){};
+    var mostrarConfiguracion = function(){};
 
     //Pantalla de la lista
     var crearPantallaLista = function(lista){
+        var $contenedor = $('#contenedor');
+
+        //vaciar el contenido del contenedor
+        $contenedor.empty();
+
+        //cargar la pantalla con la estruc
+        var $listaOrdenes = $('<div/>',{'id' : '#listaOrdenes'});
+        var $botones =  $('<div/>',{'id' : '#botones'});
+
         //crear listado
+        var tablaOrdenes = crearHTMLTabla(listaEjemplo);
+        $listaOrdenes.append(tablaOrdenes);
 
         //cargar botones
+        $botones.load('views/vistaBotones.html');
 
         //mostrarlo en la pantalla
+        $contenedor.append($botones);
     };
 
-    var crearListado = function(lista){
+    var crearHTMLTabla = function(lista){
         //crear la lista que se va a mostrar
+        var $tabla = $('<table/>');
+        var $cabeceras = $('<thead/>');
+        var $fecha = $('<th/>',{"text" : 'fecha'});
+        var $codigo = $('<th/>',{"text" : 'Código'});
+        var $denominacion = $('<th/>',{"text" : 'Denominacion'});
+        var $estado = $('<th/>',{"text" : 'E'});
+        var $observaciones = $('<th/>',{"text" : 'Observaciones'});
+
+        $cabeceras.append($fecha);
+        $cabeceras.append($codigo);
+        $cabeceras.append($denominacion);
+        $cabeceras.append($estado);
+        $cabeceras.append($observaciones);
+
+        var arrayFilas = [];
+        for(var i in lista){
+            var elementosFila =[];
+            elementosFila.push('<tr>');
+            $fecha = $('<td/>',{'text' : lista[i].fInicio});
+            elementosFila.push($fecha[0]);
+            $codigo = $('<td/>',{'text' : lista[i].codigoOrden});
+            elementosFila.push($codigo[0]);
+            $denominacion = $('<td/>',{'text' : lista[i].nomServicio});
+            elementosFila.push($denominacion[0]);
+            $estado = $('<td/>',{'text' : lista[i].estado});
+            elementosFila.push($estado[0]);
+            $observaciones = $('<td/>',{'text' : lista[i].observaciones});
+            elementosFila.push($observaciones[0]);
+            elementosFila.push('</tr>');
+
+            arrayFilas.push(elementosFila.join(''));
+            //console.log(arrayFilas);
+
+        }
+
+        $tabla.append($cabeceras);
+        return $tabla;
     };
 
     var cargarBotones = function(){
@@ -47,11 +133,16 @@ App.Vistas= (function(){
 
 
     return {
-        pintaPantallaConfiguracion : mostarConfiguracion,
+        pintaPantallaConfiguracion : mostrarConfiguracion,
         pintarLista : crearPantallaLista,
         pintarInfo : mostrarInfo,
         pintarInicio : mostrarInicio,
         pintarFin : mostrarFin
     };
+
+    /* script llamadas
+        var vistas = new App.Vistas();
+        vistas.pintarLista();
+    */
 
 });
