@@ -1,5 +1,6 @@
 ﻿var App = App||{};
 App.control = (function(){
+    'use strict';
     var codUsu;
     var liTareas;
 ///////////Func a realizar cuando se genere el evento////////////
@@ -49,15 +50,15 @@ App.control = (function(){
 /////////////////////////////Vistas/////////////////////////////
 
     var mostrarConfig = function(){
-        vistas.mostrarPantallaConfiguracion();
+        vistas.mostarConfiguracion();
     };
 
     var mostrarListaTareas = function(){
-         vistas.mostrarPantallaListaTareas(liTareas);
+         vistas.crearPantallaLista(liTareas);
     };
 
     var mostrarTarea = function(){
-         vistas.mostrarTarea(/**/);
+         vistas.crearPantallaOrden(/**/);
     };
 
 
