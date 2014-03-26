@@ -35,6 +35,11 @@ App.control = (function(){
          vistas.mostrarPestaña(/**/);
     };
 
+    //Guardar código de usuario
+    var guardaUsuario = function(){
+         data.guardarCodUsu('pepito');
+    };
+
 
 
 
@@ -92,7 +97,11 @@ App.control = (function(){
                 vistas.crearPantallaLista(liTareas);
             }
         }
-        else {alert('Codigo de usuario incorrecto');}
+        else {
+            alert('Codigo de usuario incorrecto');
+            mostrarConfig();
+            guardaUsuario();
+        }
     };
 
 
@@ -100,13 +109,15 @@ App.control = (function(){
 
 
         return{
-        crearLista : crearLista,
-        actualizaLista : actualizar,
-        enviarCompletadas : enviarDatos,
-        guardarCambios : guardar,
-        mostrarPestaña : mostrarPestañaTarea,
-        iniciar : inicial
-    };
+            crearLista : crearLista,
+            actualizaLista : actualizar,
+            enviarCompletadas : enviarDatos,
+            guardarCambios : guardar,
+            mostrarPestaña : mostrarPestañaTarea,
+
+            guardarCodigoUsuario : guardaUsuario,
+            iniciar : inicial
+        };
 
 
 
