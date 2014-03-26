@@ -98,6 +98,7 @@ App.control = (function(){
         actualizaLista : actualizar,
         enviarCompletadas : enviarDatos,
         guardarCambios : guardar,
+        mostrarPestaña : mostrarPestañaTarea,
         iniciar : inicial
     };
 
