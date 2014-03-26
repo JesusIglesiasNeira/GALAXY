@@ -77,7 +77,8 @@ return{
         guardarLista : guardarLista,
         obtenerOrden : obtOrden,
         guardarCambios : guardar,
-        guardarEstado : guardarEstado
+        guardarEstado : guardarEstado,
+        guardarOrden : guardarOrden
     };
 
 });
