@@ -76,7 +76,7 @@ return{
         obtenerListaTareas : obtListaTareas,
         guardarLista : guardarLista,
         obtenerOrden : obtOrden,
-        guardarCambios : guardar,
+        guardarCambios : guardarOrden,
         guardarEstado : guardarEstado,
         guardarOrden : guardarOrden
     };
