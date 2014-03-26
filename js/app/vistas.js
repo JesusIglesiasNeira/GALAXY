@@ -40,7 +40,13 @@ App.Vistas= (function(){
 
 
     //Pantalla Configuración
-    var mostrarConfiguracion = function(){};
+    var mostrarConfiguracion = function(){
+        var $contenedor = $('#contenedor');
+        //vaciar el contenido del contenedor
+        $contenedor.empty();
+        $contenedor.load('views/vistaConfiguracion.html');
+
+    };
 
     //Pantalla de la lista
     var crearPantallaLista = function(lista){
