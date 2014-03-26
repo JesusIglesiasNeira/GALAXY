@@ -2,7 +2,7 @@
 App.Vistas= (function(){
 
     "use strict";
-/*
+
     var listaEjemplo = [//{}
         //"listaOrdenes": [
             {"codigoOrden":"o1111","codigoCliente":"c1111","nomServicio":"s1111","estado":"t","direccion":"una calle cualquiera","provincia":"Gipuzkoa","cp":"11111","fInicio":"26-03-2014","fFin":"26-03-2014",
@@ -36,7 +36,7 @@ App.Vistas= (function(){
             "observaciones": "una observacion"
             }
         //]
-    ];//};*/
+    ];//};
 
 
     //Pantalla Configuración
@@ -61,6 +61,7 @@ App.Vistas= (function(){
 
         //crear listado
         var tablaOrdenes = crearHTMLTabla(listaEjemplo);
+         //tablaOrdenes = crearHTMLTabla(lista);
         //console.log(tablaOrdenes);
         $listaOrdenes.append(tablaOrdenes);
 

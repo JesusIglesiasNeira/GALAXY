@@ -8,12 +8,12 @@ App.ajax = (function(){
 
     var obtOrdenes = function(usuario){
         $.ajax({
-                url : '../servidor/cargaOrdenesJSON.php',
+                url : 'servidor/aaa.txt',
                 type : 'POST',
                 data : { user : usuario },
-                dataType : 'json',
+                dataType : 'text',
                 cache : false,
-                success : control.crearLista,
+                success : App.control.crearLista,
                 error : function(jqXHR, textStatus, errorThrow){
                     alert(errorThrow);
                     console.log(errorThrow);
@@ -23,12 +23,12 @@ App.ajax = (function(){
 
     var envDatos = function (datos){
         $.ajax({
-                url : '../servidor/enviaResultadosJSON.php',
+                url : 'servidor/enviaResultadosJSON.php',
                 type : 'POST',
                 data : { ordenesCompletadas : datos },
                 dataType : 'json',
                 cache : false,
-                success : control.ordenesEnviadas,
+                success : App.control.ordenesEnviadas,
                 error : function(jqXHR, textStatus, errorThrow){
                     alert(errorThrow);
                     console.log(errorThrow);

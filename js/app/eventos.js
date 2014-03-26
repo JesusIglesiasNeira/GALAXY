@@ -4,7 +4,7 @@ App.eventos= (function(){
     $(document).on('click', '#guardaCodUsu', function(e){
         var $usu = $('#codUsu').val();
         if ($usu && $usu.length> 0){
-            App.control.guardarCodigoUsuario($('#codUsu').val());
+            App.control.guardarCodigoUsuario($usu);
         }
     });
 

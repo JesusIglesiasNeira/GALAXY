@@ -34,17 +34,40 @@ App.control = (function(){
     //Guardar código de usuario
     var guardaUsuario = function(val){
           App.datos.guardarCodUsu(val);
+          var tareas;
+          var existe = existeLista();
+          if (existe){
+            tareas =  App.datos.obtenerListaTareas();
+            mostrarListaTareas(tareas);
+          }
+          else{
+            App.ajax.obtenerOrdenes();
+
+            ///////////////////////////////////////////////////////////////////////////////
+
+
+
+          }
     };
 
 
-
+    var existeLista = function(){
+        var existe = false;
+        var lisTareas;
+        lisTareas =  App.datos.obtenerListaTareas();
+        if (lisTareas && lisTareas.length > 0 ){
+            existe = true;
+        }
+        return existe;
+    };
 
 
 
 
 //////////////////////////////AJAX//////////////////////////////
     var crearLista = function(datos){
-         App.datos.guardarCambios(datos);
+        App.datos.guardarLista(datos);
+        inicial();
     };
 
     var ordenesEnviadas = function(){
@@ -63,7 +86,7 @@ App.control = (function(){
         App.Vistas.pintaPantallaConfiguracion();
     };
 
-    var mostrarListaTareas = function(){
+    var mostrarListaTareas = function(liTareas){
          App.Vistas.pintarLista(liTareas);
     };
 
@@ -87,16 +110,18 @@ App.control = (function(){
 
     var inicial = function (){
         codUsu =  App.datos.obtenerCodUsu();
+        var listaTareas;
         if (codUsu && codUsu.length > 0){
-            liTareas =  App.datos.obtenerListaTareas();    //locales
-            if (liTareas && liTareas.length > 0 ){
-                vistas.crearPantallaLista(liTareas);
+            var existe = existeLista();
+            if (existe){
+                listaTareas =  App.datos.obtenerListaTareas();
+                mostrarListaTareas(listaTareas);
             }
+            else{alert('Lista de Ordenes vacía por favor actualice la lista');}
         }
         else {
-            //alert('Codigo de usuario incorrecto');
+            alert('Codigo de usuario incorrecto o no existe');
             mostrarConfig();
-            //eventos.generaConfig();
         }
     };
 
