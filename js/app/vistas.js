@@ -32,11 +32,53 @@ App.Vistas= (function(){
         //console.log(tablaOrdenes);
         $listaOrdenes.append(tablaOrdenes);
 
+        var $filtroText = $('<input/>', {
+            'type': 'text',
+        });
+
+        var $deplegableFiltro = $('<select>', {
+            'id' : 'filtro'
+        });
+
+        var $optionFecha = $('<option/>',{
+            'text' : 'Fecha',
+            'value' : 'fecha'
+        }).appendTo($deplegableFiltro);
+
+        var $optionCodigo = $('<option/>',{
+            'text' : 'Código',
+            'value' : 'codigo'
+        }).appendTo($deplegableFiltro);
+
+        var $optionDenominacion = $('<option/>',{
+            'text' : 'Denominación',
+            'value' : 'denominacion'
+        }).appendTo($deplegableFiltro);
+
+        var $optionEstado = $('<option/>',{
+            'text' : 'Estado',
+            'value' : 'estado'
+        }).appendTo($deplegableFiltro);
+
+        var $optionObservaciones = $('<option/>',{
+            'text' : 'Observaciones',
+            'value' : 'observaciones'
+        }).appendTo($deplegableFiltro);
+
+
+        var $botonFiltro = $('<button/>',{
+            'text' : 'Filtrar',
+            'id' : 'filtrar'
+        });
+
         //cargar botones
         $botones.load('views/vistaBotones.html');
 
         //mostrarlo en la pantalla
         $contenedor.append($listaOrdenes);
+        $contenedor.append($filtroText);
+        $contenedor.append($deplegableFiltro);
+        $contenedor.append($botonFiltro);
         $contenedor.append($botones);
     };
 
@@ -63,11 +105,11 @@ App.Vistas= (function(){
         //crear la lista que se va a mostrar
         var $tabla = $('<table/>');
         var $cabeceras = $('<thead/>');
-        var $fecha = $('<th/>',{"text" : 'fecha'});
-        var $codigo = $('<th/>',{"text" : 'Código'});
-        var $denominacion = $('<th/>',{"text" : 'Denominacion'});
-        var $estado = $('<th/>',{"text" : 'E'});
-        var $observaciones = $('<th/>',{"text" : 'Observaciones'});
+        var $fecha = $('<th/>',{'text' : 'fecha'});
+        var $codigo = $('<th/>',{'text' : 'Código'});
+        var $denominacion = $('<th/>',{'text' : 'Denominacion'});
+        var $estado = $('<th/>',{'text' : 'E'});
+        var $observaciones = $('<th/>',{'text' : 'Observaciones'});
 
         $cabeceras.append($fecha);
         $cabeceras.append($codigo);
