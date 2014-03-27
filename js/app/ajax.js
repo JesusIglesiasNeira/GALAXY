@@ -8,7 +8,7 @@ App.ajax = (function(){
 
     var obtOrdenes = function(usuario){
         $.ajax({
-                url : 'servidor/cargaTareasJSON.txt',
+                url : 'servidor/cargaTareasJSON.json',
                 type : 'GET',
                 //data : { user : usuario },
                 dataType : 'text',
@@ -25,7 +25,7 @@ App.ajax = (function(){
 
     var envDatos = function (datos){
         $.ajax({
-                url : 'servidor/enviaResultadosJSON.php',
+                url : 'servidor/enviaResultadosJSON.json',
                 type : 'POST',
                 data : { ordenesCompletadas : datos },
                 dataType : 'json',

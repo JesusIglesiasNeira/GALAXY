@@ -45,7 +45,8 @@ App.control = (function(){
           var existe = existeLista();
           if (existe){
             tareas =  App.datos.obtenerListaTareas();
-            mostrarListaTareas(tareas);
+            App.Vistas.pintarLista(tareas);
+            //mostrarListaTareas(tareas);
           }
           else{
             App.ajax.obtenerOrdenes();
@@ -59,13 +60,7 @@ App.control = (function(){
 
 
     var existeLista = function(){
-        var existe = false;
-        var lisTareas;
-        lisTareas =  App.datos.obtenerListaTareas();
-        if (lisTareas && lisTareas.length > 0 ){
-            existe = true;
-        }
-        return existe;
+        return App.datos.obtenerListaTareas();
     };
 
 
@@ -93,9 +88,6 @@ App.control = (function(){
         App.Vistas.pintaPantallaConfiguracion();
     };
 
-    var mostrarListaTareas = function(liTareas){
-         App.Vistas.pintarLista(liTareas);
-    };
 
     var mostrarTarea = function(){
         //////////////
@@ -122,7 +114,8 @@ App.control = (function(){
             var existe = existeLista();
             if (existe){
                 listaTareas =  App.datos.obtenerListaTareas();
-                mostrarListaTareas(listaTareas);
+                App.Vistas.pintarLista(listaTareas);
+                //mostrarListaTareas(listaTareas);
             }
             else{alert('Lista de Ordenes vacía por favor actualice la lista');}
         }
@@ -137,14 +130,14 @@ App.control = (function(){
 
 
         return{
-            crearLista : crearLista,
             actualizaLista : actualizar,
+            crearLista : crearLista,
             enviarCompletadas : enviarDatos,
             guardarCambios : guardar,
+            guardarCodigoUsuario : guardaUsuario,
             mostrarOrden : mostrarOrden,
             mostrarPestaña : mostrarPestañaTarea,
             mostrarPantallaConfiguracion : mostrarConfig,
-            guardarCodigoUsuario : guardaUsuario,
             iniciar : inicial
         };
 
