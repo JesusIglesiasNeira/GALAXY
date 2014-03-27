@@ -149,8 +149,10 @@ App.Vistas= (function(){
         //muestra la información de la orden
     };
 
-    var mostrarInfo = function(){
-        //mostrar info
+    var mostrarInfo = function(pestaña){
+        $(pestaña).tab('show');
+
+
     };
 
     var mostrarInicio = function(){
@@ -168,6 +170,7 @@ App.Vistas= (function(){
     return {
         pintaPantallaConfiguracion : mostrarConfiguracion,
         pintarLista : crearPantallaLista,
+        pintarOrden: crearPantallaOrden,
         pintarInfo : mostrarInfo,
         pintarInicio : mostrarInicio,
         pintarFin : mostrarFin
