@@ -25,10 +25,6 @@ App.control = (function(){
          App.datos.guardarCambios(datos);
     };
 
-    //al haber seleccionado una de las 3 pestañas visualizables
-    var mostrarPestañaTarea = function(){
-         vistas.mostrarPestaña(/**/);
-    };
 
     //Al seleccionar una de las ordenes de la tabla se muestra la panta
     var mostrarOrden = function(codigo){
@@ -89,12 +85,6 @@ App.control = (function(){
     };
 
 
-    var mostrarTarea = function(){
-        //////////////
-         App.Vistas.crearPantallaOrden(/**/);
-    };
-
-
 
 
 
@@ -136,7 +126,6 @@ App.control = (function(){
             guardarCambios : guardar,
             guardarCodigoUsuario : guardaUsuario,
             mostrarOrden : mostrarOrden,
-            mostrarPestaña : mostrarPestañaTarea,
             mostrarPantallaConfiguracion : mostrarConfig,
             iniciar : inicial
         };
