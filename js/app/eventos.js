@@ -22,6 +22,11 @@ App.eventos= (function(){
         var $codigo = $(this).find('.code').data('code');
         App.control.mostrarOrden($codigo);
     });
+    $(document).on('click', '#volver', function(e){
+        App.control.obtenerCambios();
+        //App.control.guardarCambios($cambios);
+         App.control.iniciar();
+    });
 
     return{
        // generaConfig : generaEventoConfig
