@@ -30,6 +30,7 @@ App.control = (function(){
          vistas.mostrarPestaña(/**/);
     };
 
+    //Al seleccionar una de las ordenes de la tabla se muestra la panta
     var mostrarOrden = function(codigo){
         var orden = App.datos.obtenerOrden(codigo);
         if (orden){

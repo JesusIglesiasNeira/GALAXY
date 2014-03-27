@@ -3,40 +3,6 @@ App.Vistas= (function(){
 
     "use strict";
 
-    var listaEjemplo = [//{}
-        //"listaOrdenes": [
-            {"codigoOrden":"o1111","codigoCliente":"c1111","nomServicio":"s1111","estado":"t","direccion":"una calle cualquiera","provincia":"Gipuzkoa","cp":"11111","fInicio":"26-03-2014","fFin":"26-03-2014",
-            "empleados":[
-                    {'nombre':"Alfredo Castillo",'codEmpleado':"e1111",'fecha':"",'hInicio':"09:30",'hFin':"16:30",'desplazamiento':""},
-                    {'nombre':"Enrique Marín",'codEmpleado':"e2222",'fecha':"",'hInicio':"09:30",'hFin':"16:30",'desplazamiento':""},
-                    {'nombre':"José Pérez",'codEmpleado':"e3333",'fecha':"",'hInicio':"09:30",'hFin':"10:30",'desplazamiento':""}],
-            "ordenPlan":[
-                    {'local':"local 11",'area':"",'trabajo':"",'tiempo':""}
-                ],
-            "observaciones": "una observacion"
-            },
-            {"codigoOrden":"o2222","codigoCliente":"c2222","nomServicio":"s2222","estado":"p","direccion":"otra calle cualquiera","provincia":"Navarra","cp":"22222","fInicio":"26-03-2014","fFin":"",
-            "empleados":[
-                    {'nombre':"Anne Salona",'codEmpleado':"e4444",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""},
-                    {'nombre':"Angela Castro",'codEmpleado':"e5555",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""}],
-            "ordenPlan":[
-                    {'local':"local21",'area':"",'trabajo':"",'tiempo':""},
-                    {'local':"local22",'area':"",'trabajo':"",'tiempo':""}
-                ],
-            "observaciones": "una observacion"
-            },
-            {"codigoOrden":"o3333","codigoCliente":"c3333","nomServicio":"s3333","estado":"p","direccion":"alguna calle cualquiera","provincia":"Gipuzkoa","cp":"33333","fInicio":"26-03-2014","fFin":"",
-            "empleados":[
-                    {'nombre':"Fernando Villarejo",'codEmpleado':"e6666",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""},
-                    {'nombre':"Carmen Astorgano",'codEmpleado':"e7777",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""},
-                    {'nombre':"Elena Espilla",'codEmpleado':"e8888",'fecha':"",'hInicio':"",'hFin':"",'desplazamiento':""}],
-            "ordenPlan":[
-                    {'local':"local33",'area':"",'trabajo':"",'tiempo':""}
-                ],
-            "observaciones": "una observacion"
-            }
-        //]
-    ];//};
 
 
     //Pantalla Configuración
