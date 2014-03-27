@@ -18,7 +18,8 @@ App.eventos= (function(){
     $(document).on('click', 'tbody tr', function(e){
 
         //console.log($(this).find('.code').text());
-        var $codigo = $(this).find('.code').text();
+        //var $codigo = $(this).find('.code').text();
+        var $codigo = $(this).find('.code').data('code');
         App.control.mostrarOrden($codigo);
     });
 

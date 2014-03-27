@@ -83,7 +83,8 @@ App.Vistas= (function(){
             elementosFila.push($fecha.get(0).outerHTML);
             $codigo = $('<td/>',{
                 'text' : lista[i].codigoOrden,
-                 'class':'code'
+                'class':'code',
+                'data-code' : lista[i].codigoOrden
              });
             elementosFila.push($codigo.get(0).outerHTML);
             $denominacion = $('<td/>',{'text' : lista[i].nomServicio});
