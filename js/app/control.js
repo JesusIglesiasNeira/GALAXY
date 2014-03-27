@@ -11,8 +11,7 @@ App.control = (function(){
 ///////////Func a realizar cuando se genere el evento////////////
     //al pulsar el boton actualizar
     var actualizar = function(){
-        App.ajax.obtenerOrdenes(codUsu);
-        inicial();
+        App.ajax.obtenerOrdenes();
     };
 
     //al pulsar el boton enviar datos
@@ -135,7 +134,7 @@ App.control = (function(){
             enviarCompletadas : enviarDatos,
             guardarCambios : guardar,
             mostrarPestaña : mostrarPestañaTarea,
-
+            mostrarPantallaConfiguracion : mostrarConfig,
             guardarCodigoUsuario : guardaUsuario,
             iniciar : inicial
         };

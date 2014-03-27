@@ -7,6 +7,13 @@ App.eventos= (function(){
             App.control.guardarCodigoUsuario($usu);
         }
     });
+    $(document).on('click', '#configura', function(e){
+            App.control.mostrarPantallaConfiguracion();
+    });
+
+    $(document).on('click', '#actualizar', function(e){
+            App.control.actualizaLista();
+    });
 
     return{
        // generaConfig : generaEventoConfig
