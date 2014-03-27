@@ -15,6 +15,13 @@ App.eventos= (function(){
             App.control.actualizaLista();
     });
 
+    $(document).on('click', 'tbody tr', function(e){
+
+        //console.log($(this).find('.code').text());
+        var $codigo = $(this).find('.code').text();
+        App.control.mostrarOrden($codigo);
+    });
+
     return{
        // generaConfig : generaEventoConfig
     };

@@ -30,6 +30,13 @@ App.control = (function(){
          vistas.mostrarPestaña(/**/);
     };
 
+    var mostrarOrden = function(codigo){
+        var orden = App.datos.obtenerOrden(codigo);
+        if (orden){
+            App.Vistas.pintarOrden(orden);
+        }
+    };
+
     //Guardar código de usuario
     var guardaUsuario = function(val){
           App.datos.guardarCodUsu(val);
@@ -133,6 +140,7 @@ App.control = (function(){
             actualizaLista : actualizar,
             enviarCompletadas : enviarDatos,
             guardarCambios : guardar,
+            mostrarOrden : mostrarOrden,
             mostrarPestaña : mostrarPestañaTarea,
             mostrarPantallaConfiguracion : mostrarConfig,
             guardarCodigoUsuario : guardaUsuario,
