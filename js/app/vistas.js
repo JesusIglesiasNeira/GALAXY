@@ -161,16 +161,23 @@ App.Vistas= (function(){
         //muestra la información de la orden
     };
 
-    var ocultarFilas= function(lista){
+    var ocultarFilas= function(listas){
         var $filas= $('tr');
         $filas.show();
 
-        /*$filas.each(function(idx, element, lista ){
-            for(var i in)
-            $element[]
+        $filas.each(function(idx, element, lista ){
+            var $cod = $filas[idx].cells[1].innerHTML;
+            console.log($filas[idx].cells[1].innerHTML);
+            for (var i = 0; i<= listas.length-1; i++){
+                if ($cod === listas[i]){
+                    $filas[idx].style.display='none';
+                }
+            }
 
-
-        }*/
+            /*
+            if $filas[idx].
+            $element[]*/
+        });
     };
 
     var mostrarInfo = function(pestaña){
@@ -192,6 +199,7 @@ App.Vistas= (function(){
 
 
     return {
+        ocultarFilas : ocultarFilas,
         pintaPantallaConfiguracion : mostrarConfiguracion,
         pintarLista : crearPantallaLista,
         pintarOrden: crearPantallaOrden,

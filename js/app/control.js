@@ -69,8 +69,7 @@ App.control = (function(){
                    lista.push(existe[i].codigoOrden);
                 }
             }
-            console.log(lista);
-            //App.Vistas.pintarLista(lista);
+            App.Vistas.ocultarFilas(lista);
         }
     };
 
