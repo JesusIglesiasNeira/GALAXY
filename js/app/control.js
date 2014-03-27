@@ -3,7 +3,7 @@ App.control = (function(){
     'use strict';
 
 
-    var codUsu;
+    //var codUsu;
 
 
 
@@ -40,17 +40,13 @@ App.control = (function(){
           var tareas;
           var existe = existeLista();
           if (existe){
-            tareas =  App.datos.obtenerListaTareas();
+            //tareas =  App.datos.obtenerListaTareas();
+            tareas =  existe;
             App.Vistas.pintarLista(tareas);
             //mostrarListaTareas(tareas);
           }
           else{
             App.ajax.obtenerOrdenes();
-
-            ///////////////////////////////////////////////////////////////////////////////
-
-
-
           }
     };
 
@@ -98,12 +94,13 @@ App.control = (function(){
     ////Función inicial que se ejecuta//////
 
     var inicial = function (){
-        codUsu =  App.datos.obtenerCodUsu();
         var listaTareas;
+        var codUsu =  App.datos.obtenerCodUsu();
         if (codUsu && codUsu.length > 0){
             var existe = existeLista();
             if (existe){
-                listaTareas =  App.datos.obtenerListaTareas();
+                //listaTareas =  App.datos.obtenerListaTareas();
+                listaTareas =  existe;
                 App.Vistas.pintarLista(listaTareas);
                 //mostrarListaTareas(listaTareas);
             }
