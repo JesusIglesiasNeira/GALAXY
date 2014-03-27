@@ -54,6 +54,7 @@ App.Vistas= (function(){
 
         //vaciar el contenido del contenedor
         $contenedor.empty();
+        //$contenedor.load('views/vistaListado.html', rellenarVistaListado());
 
         //cargar la pantalla con la estruc
         var $listaOrdenes = $('<div/>',{'id' : '#listaOrdenes'});
@@ -71,6 +72,25 @@ App.Vistas= (function(){
         //mostrarlo en la pantalla
         $contenedor.append($listaOrdenes);
         $contenedor.append($botones);
+    };
+
+    var rellenarVistaListado = function(){
+        //cargar la pantalla con la estruc
+        var $listaOrdenes = $('#listaOrdenes');
+        var $botones =  $('#botones');
+
+        //crear listado
+        var tablaOrdenes = crearHTMLTabla(listaEjemplo);
+         //tablaOrdenes = crearHTMLTabla(lista);
+        //console.log(tablaOrdenes);
+        $listaOrdenes.append(tablaOrdenes);
+
+        //cargar botones
+        $botones.load('views/vistaBotones.html');
+
+        //mostrarlo en la pantalla
+        //$contenedor.append($listaOrdenes);
+        //$contenedor.append($botones);
     };
 
     var crearHTMLTabla = function(lista){
@@ -119,20 +139,25 @@ App.Vistas= (function(){
 
     //Pantalla Orden de trabajo
     var crearPantallaOrden = function(orden){
+         //crea la pantalla
+        var $contenedor = $('#contenedor');
+        $contenedor.empty();
+        $contenedor.load('views/vistaOrden.html');
+        //muestra la información de la orden
         //crea la pantalla
 
         //muestra la información de la orden
     };
 
-    var mostrarInfo = function(orden){
+    var mostrarInfo = function(){
         //mostrar info
     };
 
-    var mostrarInicio = function(orden){
+    var mostrarInicio = function(){
         //mostrar pantalla con los datos de inicio de la orden
     };
 
-    var mostrarFin = function(orden){
+    var mostrarFin = function(){
         //mostrar pantalla con los datos de finalizacion de la orden
     };
 
