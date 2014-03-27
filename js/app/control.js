@@ -26,6 +26,11 @@ App.control = (function(){
     };
 
 
+    var obtenerCambios = function(){
+
+    };
+
+
     //Al seleccionar una de las ordenes de la tabla se muestra la panta
     var mostrarOrden = function(codigo){
         var orden = App.datos.obtenerOrden(codigo);
@@ -124,6 +129,7 @@ App.control = (function(){
             guardarCodigoUsuario : guardaUsuario,
             mostrarOrden : mostrarOrden,
             mostrarPantallaConfiguracion : mostrarConfig,
+            obtenerCambios : obtenerCambios,
             iniciar : inicial
         };
 
