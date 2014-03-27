@@ -8,14 +8,16 @@ App.ajax = (function(){
 
     var obtOrdenes = function(usuario){
         $.ajax({
-                url : 'servidor/aaa.txt',
-                type : 'POST',
-                data : { user : usuario },
+                url : 'servidor/cargaTareasJSON.txt',
+                type : 'GET',
+                //data : { user : usuario },
                 dataType : 'text',
                 cache : false,
-                success : App.control.crearLista,
+                success : function(data){
+                    var lis = jQuery.parseJSON(data);
+                    App.control.crearLista(lis);},
                 error : function(jqXHR, textStatus, errorThrow){
-                    alert(errorThrow);
+                    //alert(errorThrow);
                     console.log(errorThrow);
                 }
             });

@@ -120,7 +120,7 @@ App.control = (function(){
             else{alert('Lista de Ordenes vacía por favor actualice la lista');}
         }
         else {
-            alert('Codigo de usuario incorrecto o no existe');
+            //alert('Codigo de usuario incorrecto o no existe');
             mostrarConfig();
         }
     };

@@ -60,8 +60,8 @@ App.Vistas= (function(){
         var $botones =  $('<div/>',{'id' : '#botones'});
 
         //crear listado
-        var tablaOrdenes = crearHTMLTabla(listaEjemplo);
-         //tablaOrdenes = crearHTMLTabla(lista);
+        //var tablaOrdenes = crearHTMLTabla(listaEjemplo);
+        var tablaOrdenes = crearHTMLTabla(lista);
         //console.log(tablaOrdenes);
         $listaOrdenes.append(tablaOrdenes);
 
