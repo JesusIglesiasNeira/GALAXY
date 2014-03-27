@@ -1,9 +1,6 @@
 ﻿var App = App||{};
 App.ajax = (function(){
 
-    var crearLista = function(data){
-        return data;
-    };
 
 
     var obtOrdenes = function(usuario){
