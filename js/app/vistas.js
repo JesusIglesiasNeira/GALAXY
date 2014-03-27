@@ -42,17 +42,17 @@ App.Vistas= (function(){
 
         var $optionFecha = $('<option/>',{
             'text' : 'Fecha',
-            'value' : 'fecha'
+            'value' : 'fInicio'
         }).appendTo($deplegableFiltro);
 
         var $optionCodigo = $('<option/>',{
             'text' : 'Código',
-            'value' : 'codigo'
+            'value' : 'codigoOrden'
         }).appendTo($deplegableFiltro);
 
         var $optionDenominacion = $('<option/>',{
             'text' : 'Denominación',
-            'value' : 'denominacion'
+            'value' : 'nomServicio'
         }).appendTo($deplegableFiltro);
 
         var $optionEstado = $('<option/>',{
@@ -159,6 +159,18 @@ App.Vistas= (function(){
         //crea la pantalla
 
         //muestra la información de la orden
+    };
+
+    var ocultarFilas= function(lista){
+        var $filas= $('tr');
+        $filas.show();
+
+        /*$filas.each(function(idx, element, lista ){
+            for(var i in)
+            $element[]
+
+
+        }*/
     };
 
     var mostrarInfo = function(pestaña){

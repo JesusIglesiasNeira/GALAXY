@@ -3,8 +3,6 @@ App.control = (function(){
     'use strict';
 
 
-    //var codUsu;
-
 
 
 
@@ -58,6 +56,22 @@ App.control = (function(){
 
     var existeLista = function(){
         return App.datos.obtenerListaTareas();
+    };
+
+
+    var ocultarEnTabla = function(filtro,valor){
+        var lista = [];
+        var existe = existeLista();
+        if (existe){
+            for(var i= 0; i<= existe.length-1; i++){
+                //console.log(existe[i][filtro]);
+                if (existe[i][filtro] != valor){
+                   lista.push(existe[i].codigoOrden);
+                }
+            }
+            console.log(lista);
+            //App.Vistas.pintarLista(lista);
+        }
     };
 
 
@@ -130,6 +144,7 @@ App.control = (function(){
             mostrarOrden : mostrarOrden,
             mostrarPantallaConfiguracion : mostrarConfig,
             obtenerCambios : obtenerCambios,
+            ocultarEnTabla : ocultarEnTabla,
             iniciar : inicial
         };
 
