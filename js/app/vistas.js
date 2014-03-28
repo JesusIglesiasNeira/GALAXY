@@ -23,7 +23,10 @@ App.Vistas= (function(){
         //$contenedor.load('views/vistaListado.html', rellenarVistaListado());
 
         //cargar la pantalla con la estruc
-        var $listaOrdenes = $('<div/>',{'id' : '#listaOrdenes'});
+        var $listaOrdenes = $('<div/>',{
+            'id' : '#listaOrdenes',
+            'class' : 'table-responsive'
+        });
         var $botones =  $('<div/>',{'id' : '#botones'});
 
         //crear listado
@@ -103,7 +106,9 @@ App.Vistas= (function(){
 
     var crearHTMLTabla = function(lista){
         //crear la lista que se va a mostrar
-        var $tabla = $('<table/>');
+        var $tabla = $('<table/>',{
+            'class' : 'claseTabla table table-bordered'
+        });
         var $cabeceras = $('<thead/>');
         var $fecha = $('<th/>',{'text' : 'fecha'});
         var $codigo = $('<th/>',{'text' : 'Código'});
