@@ -11,3 +11,7 @@ table th {
     color: red;
 
 }
+
+button,input{
+    margin : 5px;
+}
