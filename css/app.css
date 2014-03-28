@@ -1,0 +1,13 @@
+.claseTabla{
+    border : 10px;
+    background-color : #ccc;
+    color: #FFF;
+    border-color: #add;
+
+}
+
+table th {
+    text-align: center;
+    color: red;
+
+}
